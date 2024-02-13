@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4444
+
+website:
+  title: "2023-aysps-dataviz"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - zephyr
+      - custom.scss
