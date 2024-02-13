@@ -1,5 +1,5 @@
 ---
-title: "2023-aysps-dataviz"
+title: "2024-aysps-dataviz"
 ---
 
 This is a Quarto website.
