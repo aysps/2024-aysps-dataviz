@@ -24,6 +24,17 @@ website:
     right: 
       - href: "https://github.com/aysps/2024-aysps-dataviz"
         icon: github
+  
+  page-footer:
+    background: light
+    left: |
+      Content {{< fa brands creative-commons >}} 2024 by Andrew Heiss, Jason Coupet, and Virginia Carr Schneider <br>
+      All content licensed under a {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} 
+      [Creative Commons Attribution 4.0 International license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+    right: |
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
+      [View the source at {{< fa brands github >}} GitHub](https://github.com/aysps/2024-aysps-dataviz)
 
 format:
   html:

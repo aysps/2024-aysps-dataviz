@@ -132,3 +132,11 @@ $headings-font-weight: 700 !default;
   font-weight: 200;
   font-size: 1.2rem;
 }
+
+.nav-footer-center {
+  display: none;
+}
+
+.nav-footer-left {
+  flex-grow: 3;
+}
