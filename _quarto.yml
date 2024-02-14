@@ -5,15 +5,32 @@ project:
     port: 4444
 
 website:
-  title: "2023-aysps-dataviz"
+  title: "2023 AYS Data Visualization"
+  description: "Use R, ggplot2, and graphic design principles to tell powerful stories with data"
+  site-url: "https://aysps.github.io/2024-aysps-dataviz/"
+  
+  repo-url: "https://github.com/aysps/2024-aysps-dataviz"
+  # repo-actions: [edit, issue]
+  
   navbar:
+    background: "#0039A6"
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - href: session_1/index.qmd
+        text: "Session I"
+      - href: session_2/index.qmd
+        text: "Session II"
+      - href: session_3/index.qmd
+        text: "Session III"
+    right: 
+      - href: "https://github.com/aysps/2024-aysps-dataviz"
+        icon: github
 
 format:
   html:
+    language: 
+      title-block-author-single: "Instructor"
+      title-block-published: "Date"
+    shift-heading-level-by: 1
     theme:
       - zephyr
       - custom.scss

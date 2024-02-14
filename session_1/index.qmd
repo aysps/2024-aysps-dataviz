@@ -1,0 +1,90 @@
+---
+title: "Truth and Beauty with Data in R"
+subtitle: |
+  Session I&emsp;**An Introduction to the Tools**
+date: 2024-02-16
+author:
+- name: Andrew Heiss
+  url: https://www.andrewheiss.com/
+  affiliation: Georgia State University
+  email: aheiss@gsu.edu
+  orcid: 0000-0002-3948-3914
+toc: true
+toc-depth: 2
+---
+
+# Workshop schedule
+
+## Initial **setup** and welcome [9:00–9:10 AM]{.time .float-end}
+
+Things to do:
+
+- Make a free account at [Posit.cloud](https://posit.cloud/)
+- Join the workshop Posit Cloud group
+- Make sure you have access to Canvas
+
+
+## Truth, **beauty**, and data [9:10–10:00 AM]{.time .float-end}
+
+Important things:
+
+- Slides
+
+## **Getting started** with R and RStudio [10:00–10:40 AM]{.time .float-end}
+
+Important things:
+
+- Slides
+- Posit Cloud project
+
+## [Break]{.text-secondary} [10:40–10:50 PM]{.time .float-end}
+
+## **Visualize** data with {ggplot2} [10:50 AM–12:00 PM]{.time .float-end}
+
+Important things:
+
+- Slides
+- Posit Cloud project
+
+## [Lunch]{.text-secondary} [12:00–1:00 PM]{.time .float-end}
+
+## **Transform** data with {dplyr} [1:00–3:15 PM]{.time .float-end}
+
+::: {.callout-note appearance="minimal"}
+The previous section on {ggplot2} might spill over to this section—that's okay!
+:::
+
+
+Important things:
+
+- Slides
+- Posit Cloud project
+
+## [Break]{.text-secondary} [3:15–3:30 PM]{.time .float-end}
+
+## Principles of **graphic design** [3:30–5:00 PM]{.time .float-end}
+
+Important things:
+
+- Slides
+- Canva
+
+
+# Milestones
+
+## {ggplot2}
+
+Instructions here
+
+## {dplyr}
+
+Instructions here
+
+## Poster re-design
+
+Instructions here
+
+
+# Project
+
+Instructions here

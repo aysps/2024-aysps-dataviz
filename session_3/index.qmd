@@ -1,0 +1,11 @@
+---
+title: "Visualizing Data in R"
+subtitle: |
+  Session III&emsp;**Extensions: Time, Space, and Text**
+date: 2024-06-07
+author:
+- name: Virginia Carr Schneider
+  url: https://aysps.gsu.edu/phd-student/virginia-carrschneider/
+  affiliation: Georgia State University
+  email: vcarr3@student.gsu.edu
+---

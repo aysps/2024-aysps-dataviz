@@ -1,11 +1,58 @@
 ---
-title: "2024-aysps-dataviz"
+title: "Data Visualization for a Public Audience"
+page-layout: full
 ---
 
-This is a Quarto website.
+Make data meaningful through storytelling. Design better charts, graphs, interactives, and dashboards by learning foundational graphic design principles and the universal grammar of data-based graphics.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+:::: {.grid}
 
-```{r}
-1 + 1
-```
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+## Session I
+
+[**Truth and Beauty with Data in R: An Introduction to the Tools**]{.text-danger}
+
+<small>*February 16, 2024*</small>
+
+- Learn how to use R and the tidyverse to load, manipulate, and plot data
+- Become familiar with the grammar of graphics—a new way to talk about data-based graphs
+- Discover core graphic design principles that you can apply to any designed document
+- *No prior coding experience is necessary*
+
+<p class="text-center"><a class="btn btn-primary" href="/session_1/" role="button">View materials</a></p>
+
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+## Session II
+
+[**Visualizing Data in R: Core Applications**]{.text-danger}
+
+<small>*April 12, 2024*</small>
+
+- Learn best practices for visualizing amounts, proportions, uncertainty, comparisons, and relationships.
+- Discover best practices for styling and annotating data-based graphics
+- *A basic understanding of R and {ggplot2} is required/highly recommended*
+
+<p class="text-center"><a class="btn btn-primary disabled" href="/session_2/" role="button">View materials</a></p>
+
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+## Session III
+
+[**Visualizing Data in R: Extensions: Time, Space, and Text**]{.text-danger}
+
+<small>*June 7, 2024*</small>
+
+- Make interactive plots and dashboards
+- Visualize trends in data over time
+- Make maps and conduct basic geographic information systems (GIS) analysis
+- Learn the best ways to visualize text and qualitative data
+- *A basic understanding of R and {ggplot2} is required/highly recommended*
+
+<p class="text-center"><a class="btn btn-primary disabled" href="/session_3/" role="button">View materials</a></p>
+
+:::
+
+::::

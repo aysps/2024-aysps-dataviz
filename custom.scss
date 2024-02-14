@@ -1,5 +1,134 @@
 //@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&display=swap');
 
 /*-- scss:defaults --*/
 
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #ddd !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$gsu-blue: #0039A6 !default;
+$gsu-red: #CC0000 !default;
+$blue-steel: #374057 !default;
+$cool-blue: #0071CE !default;
+$vibrant-blue: #00AEEF !default;
+$light-blue: #97CAEB !default;
+$light-gray: #EEEEEE !default;
+$medium-gray: #CCCCCC !default;
+$dark-gray: #767679 !default;
+
+$blue:    $gsu-blue !default;
+$indigo:  #771C6D !default;
+$purple:  #480B6A !default;
+$pink:    #A52C60 !default;
+$red:     $gsu-red !default;
+$orange:  #EE6A24 !default;
+$yellow:  #FB9E07 !default;
+$green:   #02b875 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$primary:       $blue !default;
+$secondary:     $cool-blue !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$font-family-sans-serif: Lato, sans-serif !default;
+
+$link-color: $gsu-blue;
+$link-hover-color: $gsu-red;
+
+$font-size-base: 1.1rem !default;
+$headings-font-family: Oswald, sans-serif !default;
+$headings-font-weight: 700 !default;
+
 /*-- scss:rules --*/
+
+#quarto-content {
+  h2, h3, h4 {
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-weight: 300;
+    margin-top: 3rem;
+    border-bottom: 1px solid $medium-gray;
+    
+    strong {
+      font-weight: 700;
+      color: $gsu-red;
+    }
+  }
+  
+  // No top margin on h3s following h2s
+  h2 + section h3 {
+    margin-top: 0;
+  }
+}
+
+#quarto-header .navbar {
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  
+  .navbar-title {
+    font-weight: 500;
+  }
+  
+  .nav-item {
+    font-weight: 300;
+  }
+}
+
+.quarto-title {
+  h1 {
+    font-weight: 300;
+    font-family: Oswald, sans-serif;
+    font-size: 3rem;
+    color: $blue;
+    text-transform: uppercase;
+  }
+  
+  p {
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: $dark-gray;
+  }
+  
+  strong {
+    font-weight: 700;
+    color: $red;
+  }
+}
+
+#title-block-header {
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 3px dotted $medium-gray;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+}
+
+.time {
+  font-weight: 200;
+  font-size: 1.2rem;
+}

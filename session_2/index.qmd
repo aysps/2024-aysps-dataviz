@@ -1,0 +1,11 @@
+---
+title: "Visualizing Data in R"
+subtitle: |
+  Session II&emsp;**Core Applications**
+date: 2024-04-12
+author:
+- name: Jason Coupet
+  url: https://aysps.gsu.edu/profile/jason-coupet/
+  affiliation: Georgia State University
+  email: jcoupet@gsu.edu
+---
