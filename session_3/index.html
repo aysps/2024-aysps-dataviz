@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Virginia Carr Schneider">
+<meta name="dcterms.date" content="2024-06-07">
 
-<title>2023 AYS Data Visualization - Data Visualization for a Public Audience</title>
+<title>2023 AYS Data Visualization - Visualizing Data in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,14 +74,14 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">2023 AYS Data Visualization</span>
     </a>
   </div>
@@ -90,15 +92,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./session_1/index.html"> 
+    <a class="nav-link" href="../session_1/index.html"> 
 <span class="menu-text">Session I</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./session_2/index.html"> 
+    <a class="nav-link" href="../session_2/index.html"> 
 <span class="menu-text">Session II</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./session_3/index.html"> 
+    <a class="nav-link active" href="../session_3/index.html" aria-current="page"> 
 <span class="menu-text">Session III</span></a>
   </li>  
 </ul>
@@ -116,23 +118,43 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Visualization for a Public Audience</h1>
+<h1 class="title">Visualizing Data in R</h1>
+<p class="subtitle lead"></p><p>Session III <strong>Extensions: Time, Space, and Text</strong></p><p></p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Instructor</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://aysps.gsu.edu/phd-student/virginia-carrschneider/">Virginia Carr Schneider</a> <a href="mailto:vcarr3@student.gsu.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Georgia State University
+          </p>
+      </div>
+  </div>
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 7, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -142,51 +164,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Make data meaningful through storytelling. Design better charts, graphs, interactives, and dashboards by learning foundational graphic design principles and the universal grammar of data-based graphics.</p>
-<div class="grid">
-<section id="session-i" class="level3 g-col-12 g-col-sm-6 g-col-md-4">
-<h3 class="anchored" data-anchor-id="session-i">Session I</h3>
-<p><span class="text-danger"><strong>Truth and Beauty with Data in R: An Introduction to the Tools</strong></span></p>
-<p><small><em>February 16, 2024</em></small></p>
-<ul>
-<li>Learn how to use R and the tidyverse to load, manipulate, and plot data</li>
-<li>Become familiar with the grammar of graphics—a new way to talk about data-based graphs</li>
-<li>Discover core graphic design principles that you can apply to any designed document</li>
-<li><em>No prior coding experience is necessary</em></li>
-</ul>
-<p class="text-center">
-<a class="btn btn-primary" href="./session_1/" role="button">View materials</a>
-</p>
-</section>
-<section id="session-ii" class="level3 g-col-12 g-col-sm-6 g-col-md-4">
-<h3 class="anchored" data-anchor-id="session-ii">Session II</h3>
-<p><span class="text-danger"><strong>Visualizing Data in R: Core Applications</strong></span></p>
-<p><small><em>April 12, 2024</em></small></p>
-<ul>
-<li>Learn best practices for visualizing amounts, proportions, uncertainty, comparisons, and relationships.</li>
-<li>Discover best practices for styling and annotating data-based graphics</li>
-<li><em>A basic understanding of R and {ggplot2} is required/highly recommended</em></li>
-</ul>
-<p class="text-center">
-<a class="btn btn-primary disabled" href="./session_2/" role="button">View materials</a>
-</p>
-</section>
-<section id="session-iii" class="level3 g-col-12 g-col-sm-6 g-col-md-4">
-<h3 class="anchored" data-anchor-id="session-iii">Session III</h3>
-<p><span class="text-danger"><strong>Visualizing Data in R: Extensions: Time, Space, and Text</strong></span></p>
-<p><small><em>June 7, 2024</em></small></p>
-<ul>
-<li>Make interactive plots and dashboards</li>
-<li>Visualize trends in data over time</li>
-<li>Make maps and conduct basic geographic information systems (GIS) analysis</li>
-<li>Learn the best ways to visualize text and qualitative data</li>
-<li><em>A basic understanding of R and {ggplot2} is required/highly recommended</em></li>
-</ul>
-<p class="text-center">
-<a class="btn btn-primary disabled" href="./session_3/" role="button">View materials</a>
-</p>
-</section>
-</div>
 
 
 

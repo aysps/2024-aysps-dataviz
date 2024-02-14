@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Andrew Heiss">
+<meta name="dcterms.date" content="2024-02-16">
 
-<title>2023 AYS Data Visualization - Data Visualization for a Public Audience</title>
+<title>2023 AYS Data Visualization - Truth and Beauty with Data in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">2023 AYS Data Visualization</span>
     </a>
   </div>
@@ -90,15 +92,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./session_1/index.html"> 
+    <a class="nav-link active" href="../session_1/index.html" aria-current="page"> 
 <span class="menu-text">Session I</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./session_2/index.html"> 
+    <a class="nav-link" href="../session_2/index.html"> 
 <span class="menu-text">Session II</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./session_3/index.html"> 
+    <a class="nav-link" href="../session_3/index.html"> 
 <span class="menu-text">Session III</span></a>
   </li>  
 </ul>
@@ -116,23 +118,53 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#workshop-schedule" id="toc-workshop-schedule" class="nav-link active" data-scroll-target="#workshop-schedule">Workshop schedule</a></li>
+  <li><a href="#milestones" id="toc-milestones" class="nav-link" data-scroll-target="#milestones">Milestones</a></li>
+  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">Project</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Visualization for a Public Audience</h1>
+<h1 class="title">Truth and Beauty with Data in R</h1>
+<p class="subtitle lead"></p><p>Session I <strong>An Introduction to the Tools</strong></p><p></p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Instructor</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://www.andrewheiss.com/">Andrew Heiss</a> <a href="mailto:aheiss@gsu.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-3948-3914" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Georgia State University
+          </p>
+      </div>
+  </div>
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 16, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -142,53 +174,97 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Make data meaningful through storytelling. Design better charts, graphs, interactives, and dashboards by learning foundational graphic design principles and the universal grammar of data-based graphics.</p>
-<div class="grid">
-<section id="session-i" class="level3 g-col-12 g-col-sm-6 g-col-md-4">
-<h3 class="anchored" data-anchor-id="session-i">Session I</h3>
-<p><span class="text-danger"><strong>Truth and Beauty with Data in R: An Introduction to the Tools</strong></span></p>
-<p><small><em>February 16, 2024</em></small></p>
+<section id="workshop-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-schedule">Workshop schedule</h2>
+<section id="initial-setup-and-welcome-900910-am" class="level3">
+<h3 class="anchored" data-anchor-id="initial-setup-and-welcome-900910-am">Initial <strong>setup</strong> and welcome <span class="time float-end">9:00–9:10 AM</span></h3>
+<p>Things to do:</p>
 <ul>
-<li>Learn how to use R and the tidyverse to load, manipulate, and plot data</li>
-<li>Become familiar with the grammar of graphics—a new way to talk about data-based graphs</li>
-<li>Discover core graphic design principles that you can apply to any designed document</li>
-<li><em>No prior coding experience is necessary</em></li>
+<li>Make a free account at <a href="https://posit.cloud/">Posit.cloud</a></li>
+<li>Join the workshop Posit Cloud group</li>
+<li>Make sure you have access to Canvas</li>
 </ul>
-<p class="text-center">
-<a class="btn btn-primary" href="./session_1/" role="button">View materials</a>
-</p>
 </section>
-<section id="session-ii" class="level3 g-col-12 g-col-sm-6 g-col-md-4">
-<h3 class="anchored" data-anchor-id="session-ii">Session II</h3>
-<p><span class="text-danger"><strong>Visualizing Data in R: Core Applications</strong></span></p>
-<p><small><em>April 12, 2024</em></small></p>
+<section id="truth-beauty-and-data-9101000-am" class="level3">
+<h3 class="anchored" data-anchor-id="truth-beauty-and-data-9101000-am">Truth, <strong>beauty</strong>, and data <span class="time float-end">9:10–10:00 AM</span></h3>
+<p>Important things:</p>
 <ul>
-<li>Learn best practices for visualizing amounts, proportions, uncertainty, comparisons, and relationships.</li>
-<li>Discover best practices for styling and annotating data-based graphics</li>
-<li><em>A basic understanding of R and {ggplot2} is required/highly recommended</em></li>
+<li>Slides</li>
 </ul>
-<p class="text-center">
-<a class="btn btn-primary disabled" href="./session_2/" role="button">View materials</a>
-</p>
 </section>
-<section id="session-iii" class="level3 g-col-12 g-col-sm-6 g-col-md-4">
-<h3 class="anchored" data-anchor-id="session-iii">Session III</h3>
-<p><span class="text-danger"><strong>Visualizing Data in R: Extensions: Time, Space, and Text</strong></span></p>
-<p><small><em>June 7, 2024</em></small></p>
+<section id="getting-started-with-r-and-rstudio-10001040-am" class="level3">
+<h3 class="anchored" data-anchor-id="getting-started-with-r-and-rstudio-10001040-am"><strong>Getting started</strong> with R and RStudio <span class="time float-end">10:00–10:40 AM</span></h3>
+<p>Important things:</p>
 <ul>
-<li>Make interactive plots and dashboards</li>
-<li>Visualize trends in data over time</li>
-<li>Make maps and conduct basic geographic information systems (GIS) analysis</li>
-<li>Learn the best ways to visualize text and qualitative data</li>
-<li><em>A basic understanding of R and {ggplot2} is required/highly recommended</em></li>
+<li>Slides</li>
+<li>Posit Cloud project</li>
 </ul>
-<p class="text-center">
-<a class="btn btn-primary disabled" href="./session_3/" role="button">View materials</a>
-</p>
 </section>
+<section id="break-10401050-pm" class="level3">
+<h3 class="anchored" data-anchor-id="break-10401050-pm"><span class="text-secondary">Break</span> <span class="time float-end">10:40–10:50 PM</span></h3>
+</section>
+<section id="visualize-data-with-ggplot2-1050-am1200-pm" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-data-with-ggplot2-1050-am1200-pm"><strong>Visualize</strong> data with {ggplot2} <span class="time float-end">10:50 AM–12:00 PM</span></h3>
+<p>Important things:</p>
+<ul>
+<li>Slides</li>
+<li>Posit Cloud project</li>
+</ul>
+</section>
+<section id="lunch-1200100-pm" class="level3">
+<h3 class="anchored" data-anchor-id="lunch-1200100-pm"><span class="text-secondary">Lunch</span> <span class="time float-end">12:00–1:00 PM</span></h3>
+</section>
+<section id="transform-data-with-dplyr-100315-pm" class="level3">
+<h3 class="anchored" data-anchor-id="transform-data-with-dplyr-100315-pm"><strong>Transform</strong> data with {dplyr} <span class="time float-end">1:00–3:15 PM</span></h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
+<div class="callout-body-container">
+<p>The previous section on {ggplot2} might spill over to this section—that’s okay!</p>
+</div>
+</div>
+</div>
+<p>Important things:</p>
+<ul>
+<li>Slides</li>
+<li>Posit Cloud project</li>
+</ul>
+</section>
+<section id="break-315330-pm" class="level3">
+<h3 class="anchored" data-anchor-id="break-315330-pm"><span class="text-secondary">Break</span> <span class="time float-end">3:15–3:30 PM</span></h3>
+</section>
+<section id="principles-of-graphic-design-330500-pm" class="level3">
+<h3 class="anchored" data-anchor-id="principles-of-graphic-design-330500-pm">Principles of <strong>graphic design</strong> <span class="time float-end">3:30–5:00 PM</span></h3>
+<p>Important things:</p>
+<ul>
+<li>Slides</li>
+<li>Canva</li>
+</ul>
+</section>
+</section>
+<section id="milestones" class="level2">
+<h2 class="anchored" data-anchor-id="milestones">Milestones</h2>
+<section id="ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="ggplot2">{ggplot2}</h3>
+<p>Instructions here</p>
+</section>
+<section id="dplyr" class="level3">
+<h3 class="anchored" data-anchor-id="dplyr">{dplyr}</h3>
+<p>Instructions here</p>
+</section>
+<section id="poster-re-design" class="level3">
+<h3 class="anchored" data-anchor-id="poster-re-design">Poster re-design</h3>
+<p>Instructions here</p>
+</section>
+</section>
+<section id="project" class="level2">
+<h2 class="anchored" data-anchor-id="project">Project</h2>
+<p>Instructions here</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

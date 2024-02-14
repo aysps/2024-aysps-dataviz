@@ -1,16 +1,37 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "session_1/index.html",
+    "href": "session_1/index.html",
+    "title": "Truth and Beauty with Data in R",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Things to do:\n\nMake a free account at Posit.cloud\nJoin the workshop Posit Cloud group\nMake sure you have access to Canvas\n\n\n\n\nImportant things:\n\nSlides\n\n\n\n\nImportant things:\n\nSlides\nPosit Cloud project\n\n\n\n\n\n\n\nImportant things:\n\nSlides\nPosit Cloud project\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe previous section on {ggplot2} might spill over to this section—that’s okay!\n\n\n\nImportant things:\n\nSlides\nPosit Cloud project\n\n\n\n\n\n\n\nImportant things:\n\nSlides\nCanva"
+  },
+  {
+    "objectID": "session_1/index.html#workshop-schedule",
+    "href": "session_1/index.html#workshop-schedule",
+    "title": "Truth and Beauty with Data in R",
+    "section": "",
+    "text": "Things to do:\n\nMake a free account at Posit.cloud\nJoin the workshop Posit Cloud group\nMake sure you have access to Canvas\n\n\n\n\nImportant things:\n\nSlides\n\n\n\n\nImportant things:\n\nSlides\nPosit Cloud project\n\n\n\n\n\n\n\nImportant things:\n\nSlides\nPosit Cloud project\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe previous section on {ggplot2} might spill over to this section—that’s okay!\n\n\n\nImportant things:\n\nSlides\nPosit Cloud project\n\n\n\n\n\n\n\nImportant things:\n\nSlides\nCanva"
+  },
+  {
+    "objectID": "session_1/index.html#milestones",
+    "href": "session_1/index.html#milestones",
+    "title": "Truth and Beauty with Data in R",
+    "section": "Milestones",
+    "text": "Milestones\n\n{ggplot2}\nInstructions here\n\n\n{dplyr}\nInstructions here\n\n\nPoster re-design\nInstructions here"
+  },
+  {
+    "objectID": "session_1/index.html#project",
+    "href": "session_1/index.html#project",
+    "title": "Truth and Beauty with Data in R",
+    "section": "Project",
+    "text": "Project\nInstructions here"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "2023-aysps-dataviz",
+    "title": "Data Visualization for a Public Audience",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Make data meaningful through storytelling. Design better charts, graphs, interactives, and dashboards by learning foundational graphic design principles and the universal grammar of data-based graphics.\n\n\nSession I\nTruth and Beauty with Data in R: An Introduction to the Tools\nFebruary 16, 2024\n\nLearn how to use R and the tidyverse to load, manipulate, and plot data\nBecome familiar with the grammar of graphics—a new way to talk about data-based graphs\nDiscover core graphic design principles that you can apply to any designed document\nNo prior coding experience is necessary\n\n\nView materials\n\n\n\nSession II\nVisualizing Data in R: Core Applications\nApril 12, 2024\n\nLearn best practices for visualizing amounts, proportions, uncertainty, comparisons, and relationships.\nDiscover best practices for styling and annotating data-based graphics\nA basic understanding of R and {ggplot2} is required/highly recommended\n\n\nView materials\n\n\n\nSession III\nVisualizing Data in R: Extensions: Time, Space, and Text\nJune 7, 2024\n\nMake interactive plots and dashboards\nVisualize trends in data over time\nMake maps and conduct basic geographic information systems (GIS) analysis\nLearn the best ways to visualize text and qualitative data\nA basic understanding of R and {ggplot2} is required/highly recommended\n\n\nView materials"
   }
 ]

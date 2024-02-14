@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aysps.github.io/2023-aysps-dataviz/about.html</loc>
-    <lastmod>2024-02-13T20:17:55.488Z</lastmod>
+    <loc>https://aysps.github.io/2024-aysps-dataviz/session_1/index.html</loc>
+    <lastmod>2024-02-14T02:03:20.483Z</lastmod>
   </url>
   <url>
-    <loc>https://aysps.github.io/2023-aysps-dataviz/index.html</loc>
-    <lastmod>2024-02-13T20:17:55.489Z</lastmod>
+    <loc>https://aysps.github.io/2024-aysps-dataviz/session_3/index.html</loc>
+    <lastmod>2024-02-14T01:23:52.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aysps.github.io/2024-aysps-dataviz/session_2/index.html</loc>
+    <lastmod>2024-02-14T01:24:00.362Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aysps.github.io/2024-aysps-dataviz/index.html</loc>
+    <lastmod>2024-02-14T01:37:16.933Z</lastmod>
   </url>
 </urlset>
