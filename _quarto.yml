@@ -5,7 +5,7 @@ project:
     port: 4444
 
 website:
-  title: "2023 AYS Data Visualization"
+  title: "2024 AYS Data Visualization"
   description: "Use R, ggplot2, and graphic design principles to tell powerful stories with data"
   site-url: "https://aysps.github.io/2024-aysps-dataviz/"
   
