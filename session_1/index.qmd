@@ -38,7 +38,7 @@ Workshop materials:
 - Slides for "Data basics" (<a href="slides/03_data-basics.html" target="_blank">HTML</a> | <a href="slides/03_data-basics.pdf" target="_blank">PDF</a>)
 - Posit Cloud project
 
-## [Break]{.text-secondary} [10:40–10:50 PM]{.time .float-end}
+## [Break]{.text-secondary} [10:40–10:50 AM]{.time .float-end}
 
 ## **Visualize** data with {ggplot2} [10:50 AM–12:00 PM]{.time .float-end}
 
@@ -72,7 +72,7 @@ Other resources:
 
 - Robin Williams's [*The Non-Designer’s Design & Type Books*](https://www.amazon.com/Non-Designers-Design-Book-4th/dp/0133966151)
 - [Summary of CRAP graphic design principles](http://www.presentationzen.com/chapter6_spread.pdf) from Garr Reynolds's *Presentation Zen*
-- ["Typography in ten minutes"](https://practicaltypography.com/typography-in-ten-minutes.html)
+- Matthew Butterick, ["Typography in ten minutes"](https://practicaltypography.com/typography-in-ten-minutes.html)
 - Oliver Schöndorfer, ["Font Matrix – See & Pair Typefaces Like Never Before"](https://pimpmytype.com/font-matrix/)
 - [Adobe Creative Cloud](https://www.adobe.com/creativecloud.html)
 - [Affinity Suite](https://affinity.serif.com/en-us/)
