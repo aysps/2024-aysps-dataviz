@@ -1,6 +1,19 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "!slides/"
+    - "!projects/"
+  resources:
+    - "files/"
+    - "projects/"
+    - "slides/*.html"
+    - "slides/*.pdf"
+    - "slides/img/"
+    - "slides/libs/"
+    - "slides/css/"
+    - "slides/*_files/"
   preview:
     port: 4444
 

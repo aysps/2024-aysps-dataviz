@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Visualize data with ggplot2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andrew Heiss" />
+    <meta name="date" content="2024-02-16" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/countdown-0.4.0/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown-0.4.0/countdown.js"></script>
+    <link rel="stylesheet" href="css/ath-slides.css" type="text/css" />
+    <link rel="stylesheet" href="css/ath-inferno-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+
+class: center middle main-title section-title-1
+
+# Visualize data&lt;br&gt;with ggplot2
+
+.class-info[
+&lt;figure&gt;
+  &lt;img src="img/04/ggplot-logo-min.png" alt="ggplot" title="ggplot" width="15%"&gt;
+&lt;/figure&gt;
+]
+
+---
+
+class: title title-1
+
+# Cars and displacement
+
+.box-inv-1.medium[What is the relationship between a car's&lt;br&gt;engine weight (displacement) and its mileage (miles per gallon)?]
+
+---
+
+class: title title-1 section-title-inv-1
+
+# Your turn #1
+
+.box-1[Run this code in your Quarto file to make a graph]
+
+.box-1[Pay attention to spelling, capitalization, and parentheses!]
+
+
+```r
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+<div class="countdown" id="timer_b4c11f98" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:1.5em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+
+```r
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: bg-full bg-y-75
+background-image: url("img/04/napoleon-retreat.jpg")
+
+???
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/File:National_Museum_in_Poznan_-_Przej%C5%9Bcie_przez_Berezyn%C4%99.JPG)
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# Long distance!
+
+.center[
+&lt;figure&gt;
+  &lt;img src="img/04/napoleon-google-maps-min.png" alt="Moscow to Vilnius" title="Moscow to Vilnius" width="80%"&gt;
+  &lt;figcaption&gt;Moscow to Vilnius&lt;/figcaption&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Very cold!
+
+&lt;img src="04_visualize-data_files/figure-html/minard-temps-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Lots of people died!
+
+&lt;img src="04_visualize-data_files/figure-html/minard-deaths-1.png" width="468" style="display: block; margin: auto;" /&gt;
+
+---
+
+layout: false
+class: bg-full
+background-image: url("img/04/minard-min.png")
+
+???
+
+Source: [Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/2/29/Minard-min.png)
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# Mapping data to aesthetics
+
+.pull-left.center[
+
+&lt;figure&gt;
+  &lt;img src="img/04/gg-book.jpg" alt="Grammar of Graphics book" title="Grammar of Graphics book" width="55%"&gt;
+&lt;/figure&gt;
+
+]
+
+.pull-right[
+
+.box-inv-1.medium[Aesthetic]
+
+.box-1[Visual property of a graph]
+
+.box-1.sp-after[Position, shape, color, etc.]
+
+.box-inv-1.medium[Data]
+
+.box-1[A column in a dataset]
+
+]
+
+---
+
+# Mapping data to aesthetics
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;Data&lt;/th&gt;
+    &lt;th class="cell-left"&gt;Aesthetic&lt;/th&gt;
+    &lt;th class="cell-left"&gt;Graphic/Geometry&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Longitude&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Position (x-axis)&amp;emsp;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Point&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Latitude&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Position (y-axis)&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Point&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Army size&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Size&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Path&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Army direction&amp;emsp;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Color&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Path&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Date&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Position (x-axis)&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Line + text&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Temperature&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Position (y-axis)&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Line + text&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Mapping data to aesthetics
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;Data&lt;/th&gt;
+    &lt;th class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;aes()&lt;/code&gt;&lt;/th&gt;
+    &lt;th class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom&lt;/code&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Longitude&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;x&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_point()&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Latitude&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;y&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_point()&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Army size&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;size&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_path()&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Army direction&amp;emsp;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;color&lt;/code&gt;&amp;emsp;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_path()&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Date&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;x&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_line() + geom_text()&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;Temperature&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;y&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_line() + geom_text()&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# `ggplot()` template
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = &lt;b&gt;&lt;span style="background-color:#CBB5FF"&gt;DATA&lt;/span&gt;&lt;/b&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFDFD1"&gt;GEOM_FUNCTION&lt;/span&gt;&lt;/b&gt;(mapping = aes(&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;AESTHETIC MAPPINGS&lt;/span&gt;&lt;/b&gt;))&lt;/code&gt;
+
+--
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = &lt;b&gt;&lt;span style="background-color:#CBB5FF"&gt;troops&lt;/span&gt;&lt;/b&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFDFD1"&gt;geom_path&lt;/span&gt;&lt;/b&gt;(mapping = aes(&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;x = longitude&lt;/span&gt;&lt;/b&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;y = latitude&lt;/span&gt;&lt;/b&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;color = direction&lt;/span&gt;&lt;/b&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;size = survivors&lt;/span&gt;&lt;/b&gt;))&lt;/code&gt;
+
+---
+
+layout: false
+
+
+
+.box-1[This is a dataset named `troops`:]
+
+.small[
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; longitude &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; latitude &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; direction &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; survivors &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 54.9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 340000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 24.5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 340000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; … &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; … &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; … &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; … &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+--
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = &lt;b&gt;&lt;span style="background-color:#CBB5FF"&gt;troops&lt;/span&gt;&lt;/b&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFDFD1"&gt;geom_path&lt;/span&gt;&lt;/b&gt;(mapping = aes(&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;x = longitude&lt;/span&gt;&lt;/b&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;y = latitude&lt;/span&gt;&lt;/b&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;color = direction&lt;/span&gt;&lt;/b&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;size = survivors&lt;/span&gt;&lt;/b&gt;))&lt;/code&gt;
+
+---
+
+&lt;img src="04_visualize-data_files/figure-html/show-basic-minard-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-4-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# Heavy cars with better mileage?
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-5-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Aesthetics
+
+.pull-left-3[
+
+.box-inv-1.small[`color` (discrete)]
+
+&lt;img src="04_visualize-data_files/figure-html/aes-color-discrete-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.box-inv-1.small[`color` (continuous)]
+
+&lt;img src="04_visualize-data_files/figure-html/aes-color-continuous-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-middle-3[
+
+.box-inv-1.small[`size`]
+
+&lt;img src="04_visualize-data_files/figure-html/aes-size-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.box-inv-1.small[`fill`]
+
+&lt;img src="04_visualize-data_files/figure-html/aes-fill-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right-3[
+
+.box-inv-1.small[`shape`]
+
+&lt;img src="04_visualize-data_files/figure-html/aes-shape-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.box-inv-1.small[`alpha`]
+
+&lt;img src="04_visualize-data_files/figure-html/aes-alpha-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Mapping columns to aesthetics
+
+.small[
+
+```r
+ggplot(mpg) + geom_point(aes(x = displ, y = hwy, color = class))
+ggplot(mpg) + geom_point(aes(x = displ, y = hwy, size = class))
+ggplot(mpg) + geom_point(aes(x = displ, y = hwy, shape = class))
+ggplot(mpg) + geom_point(aes(x = displ, y = hwy, alpha = class))
+```
+]
+
+---
+
+layout: false
+
+
+```r
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = class))
+```
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-7-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: title title-1 section-title-inv-1
+
+# Your turn #2
+
+.box-1[Add color, size, alpha, and shape aesthetics to your graph.]
+
+.box-1[Experiment!]
+
+.box-1[Do different things happen when you map aesthetics to discrete and continuous variables?]
+
+.box-1[What happens when you use more than one aesthetic?]
+
+---
+
+class: title title-1
+
+# How would you make this plot?
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-8-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+.left-code[
+
+```r
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy, 
+                 color = class))
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/color-aes-example-1.png)
+]
+
+---
+
+.left-code[
+
+```r
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy), 
+             color = "blue")
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/color-set-example-1.png)
+]
+
+---
+
+.pull-left[
+.small[
+
+```r
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy, 
+                 color = "blue"))
+```
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+]
+
+.pull-right[
+.small[
+
+```r
+ggplot(mpg) +
+  geom_point(aes(x = displ, y = hwy), 
+             color = "blue")
+```
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+]
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# What's the same? What's different?
+
+.pull-left[
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Geoms
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = &lt;b&gt;&lt;span style="background-color:#CBB5FF"&gt;DATA&lt;/span&gt;&lt;/b&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;&lt;span style="background-color:#FFDFD1"&gt;GEOM_FUNCTION&lt;/span&gt;&lt;/b&gt;(mapping = aes(&lt;b&gt;&lt;span style="background-color:#FFD0CF"&gt;AESTHETIC MAPPINGS&lt;/span&gt;&lt;/b&gt;))&lt;/code&gt;
+
+---
+
+# Possible geoms
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;&lt;/th&gt;
+    &lt;th class="cell-left"&gt;Example geom&lt;/th&gt;
+    &lt;th class="cell-left"&gt;What it makes&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;img src="img/04/geom_bar-min.png"&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_col()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Bar charts&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;img src="img/04/geom_text-min.png"&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_text()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Text&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;img src="img/04/geom_point-min.png"&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_point()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Points&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;img src="img/04/geom_boxplot-min.png"&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_boxplot()&lt;/code&gt;&amp;emsp;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Boxplots&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;img src="img/04/geom_sf-min.png"&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;geom_sf()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Maps&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Possible geoms
+
+.box-inv-1[There are dozens of possible geoms!]
+
+.box-1[See [the **ggplot2** documentation](https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms) for&lt;br&gt;complete examples of all the different geom layers]
+
+.box-1[Also see the ggplot cheatsheet]
+
+---
+
+layout: false
+class: title title-1 section-title-inv-1
+
+# Your turn #3
+
+.box-1[Replace this scatterplot with boxplots. Use the cheatsheet.]
+
+.pull-left[
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+<div class="countdown" id="timer_21b8bd19" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+class: title title-1 section-title-inv-1
+
+# Your turn #4
+
+.box-1[Make a histogram of `hwy`. Use the cheetsheet.&lt;br&gt;Hint: don't supply a `y` variable.]
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-16-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: title title-1 section-title-inv-1
+
+# Your turn #5
+
+.box-1[Make this density plot of `hwy` colored by `class`.&lt;br&gt;Use the cheatsheet. Hint: don't supply a `y` variable.]
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-17-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: title title-1
+
+# Complex graphs!
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-18-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: title title-1 section-title-inv-1
+
+# Your turn #6
+
+.box-1[Predict what this code will do. Then run it.]
+
+
+```r
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+```
+
+<div class="countdown" id="timer_3f84ff83" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+class: title title-1
+
+# Global vs. local
+
+.box-inv-1[Any aesthetics in `ggplot()` will show up in all `geom_` layers]
+
+.small[
+
+```r
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point() +
+  geom_smooth()
+```
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-21-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+class: title title-1
+
+# Global vs. local
+
+.box-inv-1[Any aesthetics in `geom_` layers only apply to that layer]
+
+.small[
+
+```r
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(mapping = aes(color = drv)) +
+  geom_smooth()
+```
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-22-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# So much more!
+
+.pull-left[
+.box-inv-1[There are many other layers we can use to make and enhance graphs!]
+
+.box-inv-1[We sequentially add layers onto the foundational `ggplot()` plot to create complex figures]
+]
+
+.pull-right[
+![](img/04/ggplot-layers@4x-min.png)
+]
+
+---
+
+# Putting it all together
+
+.box-inv-1.medium[We can build a plot sequentially&lt;br&gt;to see how each grammatical layer&lt;br&gt;changes the appearance]
+
+---
+
+layout: false
+
+.left-code[
+.box-1[Start with data and aesthetics]
+
+
+```r
+*ggplot(data = mpg,
+*      mapping = aes(x = displ,
+*                    y = hwy,
+*                    color = drv))
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-1-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Add a point geom]
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+* geom_point()
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-2-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Add a smooth geom]
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+* geom_smooth()
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-3-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Make it straight]
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+* geom_smooth(method = "lm")
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-4-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Use a viridis color scale]
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+* scale_color_viridis_d()
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-5-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Facet by drive]
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_color_viridis_d() +
+* facet_wrap(vars(drv), ncol = 1)
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-6-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Add labels]
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_color_viridis_d() +
+  facet_wrap(vars(drv), ncol = 1) +
+* labs(x = "Displacement", y = "Highway MPG",
+*      color = "Drive",
+*      title = "Heavier cars get lower mileage",
+*      subtitle = "Displacement indicates weight(?)",
+*      caption = "I know nothing about cars")
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-7-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Add a theme]
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_color_viridis_d() +
+  facet_wrap(vars(drv), ncol = 1) +
+  labs(x = "Displacement", y = "Highway MPG",
+       color = "Drive", 
+       title = "Heavier cars get lower mileage",
+       subtitle = "Displacement indicates weight(?)",
+       caption = "I know nothing about cars") +
+* theme_bw()
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-8-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Modify the theme]
+
+
+```r
+ggplot(data = mpg, 
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_color_viridis_d() +
+  facet_wrap(vars(drv), ncol = 1) +
+  labs(x = "Displacement", y = "Highway MPG",
+       color = "Drive", 
+       title = "Heavier cars get lower mileage",
+       subtitle = "Displacement indicates weight(?)",
+       caption = "I know nothing about cars") +
+  theme_bw() +
+* theme(legend.position = "bottom",
+*       plot.title = element_text(face = "bold"))
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-9-1.png)
+]
+
+---
+
+.left-code[
+.box-1[Finished!]
+
+
+```r
+ggplot(data = mpg, 
+       mapping = aes(x = displ,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+  geom_smooth(method = "lm") + 
+  scale_color_viridis_d() +
+  facet_wrap(vars(drv), ncol = 1) +
+  labs(x = "Displacement", y = "Highway MPG",
+       color = "Drive", 
+       title = "Heavier cars get lower mileage",
+       subtitle = "Displacement indicates weight(?)",
+       caption = "I know nothing about cars") +
+  theme_bw() +
+  theme(legend.position = "bottom",
+        plot.title = element_text(face = "bold"))
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/mpg-layers-finished-1.png)
+]
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# So many possibilities!
+
+.pull-left[
+![](img/04/ggplot-layers@4x-min.png)
+]
+
+.pull-right[
+.box-inv-1[These were just a few examples of layers!]
+
+.box-1[See [the **ggplot2** documentation](https://ggplot2.tidyverse.org/reference/index.html) for&lt;br&gt;complete examples of everything you can do]
+]
+
+---
+
+# A true grammar
+
+.pull-left[
+.box-inv-1[With the grammar of graphics, we don't talk about specific chart *types*]
+
+.box-1.small[Hunt through Excel menus for a stacked bar chart and manually reshape your data to work with it]
+]
+
+.pull-right[
+.center[
+&lt;figure&gt;
+  &lt;img src="img/04/excel-chart-types-min.png" alt="Excel chart types" title="Excel chart types" width="78%"&gt;
+&lt;/figure&gt;
+]
+]
+
+---
+
+# A true grammar
+
+.pull-left[
+.box-inv-1[With the grammar of graphics, we *do* talk about specific chart *elements*]
+
+.box-1.small[Map a column to the x-axis, fill by a different variable, and `geom_col()` to get stacked bars]
+
+.box-1.small[Geoms can be interchangable&lt;br&gt;(e.g. switch `geom_violin()` to `geom_boxplot()`)]
+]
+
+.pull-right[
+.center[
+&lt;figure&gt;
+  &lt;img src="img/04/ggplot-layers@4x-min.png" alt="Grammar of graphics layers" title="Grammar of graphics layers" width="100%"&gt;
+&lt;/figure&gt;
+]
+]
+
+---
+
+# Describing graphs with the grammar
+
+.left-code[
+.box-1.small[Map wealth to the x-axis, health to the y-axis, add points, color by continent, size by population, scale the y-axis with a log, and facet by year]
+
+
+```r
+ggplot(filter(gapminder, 
+              year %in% c(2002, 2007)), 
+       aes(x = gdpPercap,
+           y = lifeExp,
+           color = continent,
+           size = pop)) +
+  geom_point() +
+  scale_x_log10() + 
+  facet_wrap(vars(year), ncol = 1)
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/describe-1-1.png)
+]
+
+---
+
+# Describing graphs with the grammar
+
+.left-code[
+.box-1.small[Map health to the x-axis, add a histogram with bins for every 5 years, fill and facet by continent]
+
+
+```r
+ggplot(gapminder_2007, 
+       aes(x = lifeExp,
+           fill = continent)) +
+  geom_histogram(binwidth = 5, 
+                 color = "white") +
+  guides(fill = FALSE) +  # Turn off legend
+  facet_wrap(vars(continent))
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/describe-2-1.png)
+]
+
+---
+
+# Describing graphs with the grammar
+
+.left-code[
+.box-1.small[Map continent to the x-axis, health to the y-axis, add violin plots and semi-transparent boxplots, fill by continent]
+
+
+```r
+ggplot(gapminder, 
+       aes(x = continent,
+           y = lifeExp,
+           fill = continent)) +
+  geom_violin() +
+  geom_boxplot(alpha = 0.5) +
+  guides(fill = FALSE)  # Turn off legend
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/describe-3-1.png)
+]
+
+---
+
+# Scales
+
+.box-inv-1[Scales change the properties of the variable mapping]
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;Example layer&lt;/th&gt;
+    &lt;th class="cell-left"&gt;What it does&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;scale_x_continuous()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Make the x-axis continuous&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;scale_x_continuous(breaks = 1:5)&amp;ensp;&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Manually specify axis ticks&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;scale_x_log10()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Log the x-axis&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;scale_color_gradient()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Use a gradient&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;scale_fill_viridis_d()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Fill with discrete viridis colors&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Scales
+
+.pull-left[
+
+.box-inv-1.small[`scale_x_log10()`]
+
+&lt;img src="04_visualize-data_files/figure-html/scale-example-1-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+.box-inv-1.small[`scale_color_viridis_d()`]
+
+&lt;img src="04_visualize-data_files/figure-html/scale-example-2-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+class: title title-1 section-title-inv-1
+
+# Your turn #7
+
+.box-1[Make this density plot of `displ` filled by `drv`.&lt;br&gt;Use the viridis fill scale.]
+
+.box-1.small[For bonus fun, try a different viridis option like `plasma` or `inferno`.]
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-23-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+<div class="countdown" id="timer_4d0a576a" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+class: section-title-inv-1
+
+.left-code[
+
+```r
+ggplot(mpg, 
+       aes(x = displ, 
+           fill = drv)) +
+  geom_density(alpha = 0.75) +
+  scale_fill_viridis_d(option = "plasma")
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/your-turn-7-1.png)
+]
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# Facets
+
+.box-inv-1[Facets show subplots for different subsets of data]
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;Example layer&lt;/th&gt;
+    &lt;th class="cell-left"&gt;What it does&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;facet_wrap(vars(continent))&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Plot for each continent&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;facet_wrap(vars(continent, year))&lt;/code&gt;&amp;emsp;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Plot for each continent/year&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;facet_wrap(..., ncol = 1)&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Put all facets in one column&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;facet_wrap(..., nrow = 1)&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Put all facets in one row&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Facets
+
+.pull-left[
+
+.box-inv-1.small[`facet_wrap(vars(continent))`]
+
+&lt;img src="04_visualize-data_files/figure-html/facet-example-1-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+.box-inv-1.small[`facet_wrap(vars(continent, year))`]
+
+&lt;img src="04_visualize-data_files/figure-html/facet-example-2-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+class: title title-1 section-title-inv-1
+
+# Your turn #8
+
+.box-1[Facet this scatterplot by `drv`. Are there any interesting trends?]
+
+&lt;img src="04_visualize-data_files/figure-html/unnamed-chunk-25-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+<div class="countdown" id="timer_93d494a0" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+---
+
+class: section-title-inv-1
+
+.left-code[
+
+```r
+ggplot(mpg, 
+       aes(x = displ, 
+           y = hwy, 
+           color = class)) +
+  geom_point() +
+  facet_wrap(vars(drv))
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/your-turn-8-1.png)
+]
+
+---
+
+layout: true
+class: title title-1
+
+---
+
+# Coordinates
+
+.box-inv-1[Change the coordinate system]
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;Example layer&lt;/th&gt;
+    &lt;th class="cell-left"&gt;What it does&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;coord_cartesian()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Standard x-y coordinate system&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;coord_cartesian(ylim = c(1, 10))&lt;/code&gt;&amp;emsp;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Zoom in where y is 1–10&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;coord_flip()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Switch x and y&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;coord_polar()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Use circular polar system&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Coordinates
+
+.pull-left[
+
+.box-inv-1.small[`coord_cartesian(ylim = c(70, 80), xlim = c(10000, 30000))`]
+
+&lt;img src="04_visualize-data_files/figure-html/coord-example-1-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+.box-inv-1.small[`coord_flip()`]
+
+&lt;img src="04_visualize-data_files/figure-html/coord-example-2-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Labels
+
+.box-inv-1[Add labels to the plot with a single `labs()` layer]
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;Example layer&lt;/th&gt;
+    &lt;th class="cell-left"&gt;What it does&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;labs(title = "Neat title")&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Title&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;labs(caption = "Something")&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Caption&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;labs(y = "Something")&lt;/td&gt;
+    &lt;td class="cell-left"&gt;y-axis&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;labs(size = "Population")&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Title of size legend&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Labels
+
+.left-code[
+
+```r
+ggplot(gapminder_2007, 
+       aes(x = gdpPercap, y = lifeExp, 
+           color = continent, size = pop)) +
+  geom_point() +
+  scale_x_log10() +
+  labs(title = "Health and wealth grow together",
+       subtitle = "Data from 2007",
+       x = "Wealth (GDP per capita)",
+       y = "Health (life expectancy)",
+       color = "Continent",
+       size = "Population",
+       caption = "Source: The Gapminder Project")
+```
+]
+
+.right-plot[
+![](04_visualize-data_files/figure-html/labels-example-1.png)
+]
+
+---
+
+# Theme
+
+.box-inv-1[Change the appearance of anything in the plot]
+
+.box-1[There are many built-in themes]
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class="cell-left"&gt;Example layer&lt;/th&gt;
+    &lt;th class="cell-left"&gt;What it does&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;theme_grey()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Default grey background&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;theme_bw()&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Black and white&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;theme_dark()&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Dark&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="cell-left"&gt;&lt;code class="remark-inline-code"&gt;theme_minimal()&lt;/code&gt;&lt;/td&gt;
+    &lt;td class="cell-left"&gt;Minimal&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Theme
+
+.pull-left[
+
+.box-inv-1.small[`theme_dark()`]
+
+&lt;img src="04_visualize-data_files/figure-html/theme-example-1-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+.box-inv-1.small[`theme_minimal()`]
+
+&lt;img src="04_visualize-data_files/figure-html/theme-example-2-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Theme
+
+.box-inv-1[There are collections of pre-built themes online,&lt;br&gt;like [the **ggthemes** package](https://jrnold.github.io/ggthemes/)]
+
+.center[
+&lt;figure&gt;
+  &lt;img src="img/04/ggthemes-min.png" alt="ggthemes" title="ggthemes" width="45%"&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Theme
+
+.box-inv-1[Organizations often make their own custom themes, [like the BBC](https://bbc.github.io/rcookbook/)]
+
+.center[
+&lt;figure&gt;
+  &lt;img src="img/04/bbc-cookbook-min.png" alt="BBC ggplot theme" title="BBC ggplot theme" width="80%"&gt;
+&lt;/figure&gt;
+]
+
+---
+
+# Theme options
+
+.box-inv-1[Make theme adjustments with `theme()`]
+
+.box-1[There are a billion options here!]
+
+
+```r
+theme_bw() + 
+theme(legend.position = "bottom",
+      plot.title = element_text(face = "bold"),
+      panel.grid = element_blank(),
+      axis.title.y = element_text(face = "italic"))
+```
+
+---
+
+# Saving graphs
+
+.box-inv-1.medium[Use `ggsave()` to save a plot to your computer]
+
+.box-1[Store plot as an object, feed it to `ggsave()`]
+
+
+```r
+my_plot &lt;- ggplot(...)
+
+ggsave("plot_name.pdf", my_plot, width = 5, height = 3.5)
+ggsave("plot_name.png", my_plot, width = 5, height = 3.5)
+```
+
+---
+
+class: title title-1
+
+# Next up
+
+.box-inv-1.medium[Transforming and&lt;br&gt;manipulating data with dplyr]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

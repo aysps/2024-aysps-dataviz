@@ -20,33 +20,34 @@ toc-depth: 2
 Things to do:
 
 - Make a free account at [Posit.cloud](https://posit.cloud/)
-- Join the workshop Posit Cloud group
-- Make sure you have access to Canvas
+- [Join the workshop Posit Cloud group](https://posit.cloud/spaces/480579/join?access_code=PsZkhsFqm2T2xZ1rNHSQsWfKjkOQL99WDgGtZk_v)
+- Make sure you have access to [Canvas](https://robinsongsu.instructure.com/courses/1688)
 
 
 ## Truth, **beauty**, and data [9:10–10:00 AM]{.time .float-end}
 
-Important things:
+Workshop materials:
 
-- Slides
+- Slides for "Truth, beauty, and data" (<a href="slides/01_truth-beauty-data.html" target="_blank">HTML</a> | <a href="slides/01_truth-beauty-data.pdf" target="_blank">PDF</a>)
 
 ## **Getting started** with R and RStudio [10:00–10:40 AM]{.time .float-end}
 
-Important things:
+Workshop materials:
 
-- Slides
+- Slides for "Getting started with R and RStudio" (<a href="slides/02_getting-started.html" target="_blank">HTML</a> | <a href="slides/02_getting-started.pdf" target="_blank">PDF</a>)
+- Slides for "Data basics" (<a href="slides/03_data-basics.html" target="_blank">HTML</a> | <a href="slides/03_data-basics.pdf" target="_blank">PDF</a>)
 - Posit Cloud project
 
 ## [Break]{.text-secondary} [10:40–10:50 PM]{.time .float-end}
 
 ## **Visualize** data with {ggplot2} [10:50 AM–12:00 PM]{.time .float-end}
 
-Important things:
+Workshop materials:
 
-- Slides
+- Slides for "Visualize data with {ggplot2}" (<a href="slides/04_visualize-data.html" target="_blank">HTML</a> | <a href="slides/04_visualize-data.pdf" target="_blank">PDF</a>)
 - Posit Cloud project
 
-## [Lunch]{.text-secondary} [12:00–1:00 PM]{.time .float-end}
+## [Lunch]{.text-secondary} <small>(Room 840)</small> [12:00–1:00 PM]{.time .float-end}
 
 ## **Transform** data with {dplyr} [1:00–3:15 PM]{.time .float-end}
 
@@ -54,20 +55,28 @@ Important things:
 The previous section on {ggplot2} might spill over to this section—that's okay!
 :::
 
+Workshop materials:
 
-Important things:
-
-- Slides
+- Slides for "Transform data with {dplyr}" (<a href="slides/05_transform-data.html" target="_blank">HTML</a> | <a href="slides/05_transform-data.pdf" target="_blank">PDF</a>)
 - Posit Cloud project
 
 ## [Break]{.text-secondary} [3:15–3:30 PM]{.time .float-end}
 
 ## Principles of **graphic design** [3:30–5:00 PM]{.time .float-end}
 
-Important things:
+Workshop materials:
 
-- Slides
-- Canva
+- Slides for "Principles of graphic design" (<a href="slides/06_graphic-design.html" target="_blank">HTML</a> | <a href="slides/06_graphic-design.pdf" target="_blank">PDF</a>)
+
+Other resources:
+
+- Robin Williams's [*The Non-Designer’s Design & Type Books*](https://www.amazon.com/Non-Designers-Design-Book-4th/dp/0133966151)
+- [Summary of CRAP graphic design principles](http://www.presentationzen.com/chapter6_spread.pdf) from Garr Reynolds's *Presentation Zen*
+- ["Typography in ten minutes"](https://practicaltypography.com/typography-in-ten-minutes.html)
+- Oliver Schöndorfer, ["Font Matrix – See & Pair Typefaces Like Never Before"](https://pimpmytype.com/font-matrix/)
+- [Adobe Creative Cloud](https://www.adobe.com/creativecloud.html)
+- [Affinity Suite](https://affinity.serif.com/en-us/)
+- [Canva](https://www.canva.com/)
 
 
 # Milestones
