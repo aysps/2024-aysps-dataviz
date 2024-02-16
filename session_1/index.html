@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -211,6 +245,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Slides for “Visualize data with {ggplot2}” (<a href="slides/04_visualize-data.html" target="_blank">HTML</a> | <a href="slides/04_visualize-data.pdf" target="_blank">PDF</a>)</li>
 <li><a href="https://posit.cloud/spaces/480579/content/7610687">Posit Cloud project</a></li>
 </ul>
+<p>Other resources:</p>
+<ul>
+<li>Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a>, chapter 1: <a href="https://r4ds.hadley.nz/data-visualize">“Data tisualization”</a></li>
+</ul>
 </section>
 <section id="lunch-room-840-1200100-pm" class="level3">
 <h3 class="anchored" data-anchor-id="lunch-room-840-1200100-pm"><span class="text-secondary">Lunch</span> <small>(Room 840)</small> <span class="time float-end">12:00–1:00 PM</span></h3>
@@ -232,6 +270,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Slides for “Transform data with {dplyr}” (<a href="slides/05_transform-data.html" target="_blank">HTML</a> | <a href="slides/05_transform-data.pdf" target="_blank">PDF</a>)</li>
 <li><a href="https://posit.cloud/spaces/480579/content/7610687">Posit Cloud project</a></li>
 </ul>
+<p>Other resources:</p>
+<ul>
+<li>Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a>, chapter 3: <a href="https://r4ds.hadley.nz/data-transform">“Data transformation”</a></li>
+</ul>
 </section>
 <section id="break-315330-pm" class="level3">
 <h3 class="anchored" data-anchor-id="break-315330-pm"><span class="text-secondary">Break</span> <span class="time float-end">3:15–3:30 PM</span></h3>
@@ -241,7 +283,6 @@ ul.task-list li input[type="checkbox"] {
 <p>Workshop materials:</p>
 <ul>
 <li>Slides for “Principles of graphic design” (<a href="slides/06_graphic-design.html" target="_blank">HTML</a> | <a href="slides/06_graphic-design.pdf" target="_blank">PDF</a>)</li>
-<li>My turn (download files)</li>
 </ul>
 <p>Other resources:</p>
 <ul>
@@ -283,6 +324,28 @@ ul.task-list li input[type="checkbox"] {
 <h5 class="anchored" data-anchor-id="designed-object-3">Designed object 3</h5>
 <p>Download the 2022 Annual Report for Médecins Sans Frontières (Doctors Without Borders) <a href="https://www.msf.org/sites/default/files/2023-07/international-activity-report-2022.pdf">here</a>. It’s 76 pages, so there’s no way you can critique the whole thing. Look at the first <strong>10–20 pages</strong> and critique those more broadly.</p>
 </section>
+</section>
+<section id="our-turn" class="level4">
+<h4 class="anchored" data-anchor-id="our-turn">Our turn</h4>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/duke-poster.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Duke Alumni</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Volunteer Leadership Conference</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Room 200 Rubenstein Hall</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>(Building next door to Sanford; 2nd floor)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>2:00-2:45 pm</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>- Have Tool Kit, Will Volunteer:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>3:00-3:45 pm</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>- Today's Duke Student—Opportunities, Experiences, Pressures, and Fun</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 </section>
