@@ -36,7 +36,7 @@ Workshop materials:
 
 - Slides for "Getting started with R and RStudio" (<a href="slides/02_getting-started.html" target="_blank">HTML</a> | <a href="slides/02_getting-started.pdf" target="_blank">PDF</a>)
 - Slides for "Data basics" (<a href="slides/03_data-basics.html" target="_blank">HTML</a> | <a href="slides/03_data-basics.pdf" target="_blank">PDF</a>)
-- Posit Cloud project
+- [Posit Cloud project](https://posit.cloud/spaces/480579/content/7610687)
 
 ## [Break]{.text-secondary} [10:40–10:50 AM]{.time .float-end}
 
@@ -45,7 +45,12 @@ Workshop materials:
 Workshop materials:
 
 - Slides for "Visualize data with {ggplot2}" (<a href="slides/04_visualize-data.html" target="_blank">HTML</a> | <a href="slides/04_visualize-data.pdf" target="_blank">PDF</a>)
-- Posit Cloud project
+- [Posit Cloud project](https://posit.cloud/spaces/480579/content/7610687)
+
+Other resources:
+
+- Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science*](https://r4ds.hadley.nz/), chapter 1: ["Data visualization"](https://r4ds.hadley.nz/data-visualize)
+- Andrew Heiss, [Data Visualization (PMAP 8551)](https://datavizf23.classes.andrewheiss.com/)
 
 ## [Lunch]{.text-secondary} <small>(Room 840)</small> [12:00–1:00 PM]{.time .float-end}
 
@@ -58,7 +63,11 @@ The previous section on {ggplot2} might spill over to this section—that's okay
 Workshop materials:
 
 - Slides for "Transform data with {dplyr}" (<a href="slides/05_transform-data.html" target="_blank">HTML</a> | <a href="slides/05_transform-data.pdf" target="_blank">PDF</a>)
-- Posit Cloud project
+- [Posit Cloud project](https://posit.cloud/spaces/480579/content/7610687)
+
+Other resources:
+
+- Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science*](https://r4ds.hadley.nz/), chapter 3: ["Data transformation"](https://r4ds.hadley.nz/data-transform)
 
 ## [Break]{.text-secondary} [3:15–3:30 PM]{.time .float-end}
 
@@ -70,7 +79,7 @@ Workshop materials:
 
 Other resources:
 
-- Robin Williams's [*The Non-Designer’s Design & Type Books*](https://www.amazon.com/Non-Designers-Design-Book-4th/dp/0133966151)
+- Robin Williams's [*The Non-Designer's Design & Type Books*](https://www.amazon.com/Non-Designers-Design-Book-4th/dp/0133966151)
 - [Summary of CRAP graphic design principles](http://www.presentationzen.com/chapter6_spread.pdf) from Garr Reynolds's *Presentation Zen*
 - Matthew Butterick, ["Typography in ten minutes"](https://practicaltypography.com/typography-in-ten-minutes.html)
 - Oliver Schöndorfer, ["Font Matrix – See & Pair Typefaces Like Never Before"](https://pimpmytype.com/font-matrix/)
@@ -78,22 +87,101 @@ Other resources:
 - [Affinity Suite](https://affinity.serif.com/en-us/)
 - [Canva](https://www.canva.com/)
 
+### Your turn #1
+
+You've just learned about CRAP:
+
+- **C**ontrast
+- **R**epetition
+- **A**lignment
+- **P**roximity
+
+Now you get to test out your newfound skills and critique a few designed objects!
+
+In your group, introduce yourselves briefly and then do the following for each of the designs listed below:
+
+- Evaluate the design's **contrast** in typography, colors, graphic elements (like logos, images, etc.), and other parts of the design. What works? What doesn't work? What might you tweak to improve the contrast?
+
+- Evaluate the design's **repetition**. Which design elements are repeated? Which aren't? Which should be? Which shouldn't be? What might you tweak to improve the repetition?
+
+- Evaluate the design's **alignment**. Draw lines on the page (or imagine them, since you're on a computer) and count how many different alignments there are. What works? What doesn't? What might you tweak to improve the alignment?
+
+- Evaluate the design's **proximity**. Are related items groups appropriately? Is there a clear visual hierarchy that the reader can easily follow to understand the message of the design? What works? What doesn't? What might you tweak to improve the proximity?
+
+- Evaluate combinations of CRAP principles. Is there repetition and contrast in alignment, for instance?
+
+#### Designed object 1
+
+Download [this image from a conference](files/duke-poster.png) held at Duke University some time in 2017. 
+
+#### Designed object 2
+
+Download [this PDF of a handout](files/qw-fact-sheet.pdf) for an international nonprofit that works with water projects in Kenya.
+
+#### Designed object 3
+
+Download the 2022 Annual Report for Médecins Sans Frontières (Doctors Without Borders) [here](https://www.msf.org/sites/default/files/2023-07/international-activity-report-2022.pdf). It's 76 pages, so there's no way you can critique the whole thing. Look at the first **10–20 pages** and critique those more broadly. 
+
+### Our turn
+
+```{r duke-poster, echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics("files/duke-poster.png")
+```
+
+```default
+Duke Alumni
+Volunteer Leadership Conference
+Room 200 Rubenstein Hall
+(Building next door to Sanford; 2nd floor)
+
+2:00-2:45 pm
+- Have Tool Kit, Will Volunteer:
+
+3:00-3:45 pm
+- Today's Duke Student—Opportunities, Experiences, Pressures, and Fun
+```
 
 # Milestones
 
-## {ggplot2}
+## 1: {ggplot2}
 
-Instructions here
+Open [this Posit Cloud project](https://posit.cloud/spaces/480579/content/7610728) and complete the re-creations and extensions in `01_ggplot.qmd`. 
 
-## {dplyr}
+When you're all done, click on the "Render" button at the top of the editor window to render the document to a PDF or Word file. Upload that file to Canvas.
 
-Instructions here
+## 2: {dplyr} and {ggplot2}
 
-## Poster re-design
+Open [this Posit Cloud project](https://posit.cloud/spaces/480579/content/7610728) and complete the re-creations and extensions in `02_dplyr-ggplot.qmd`. 
 
-Instructions here
+When you're all done, click on the "Render" button at the top of the editor window to render the document to a PDF or Word file. Upload that file to Canvas.
+
+## 3: Poster critique and re-design
+
+```{r student-wellness, echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics("files/student-wellness.jpg")
+```
+
+### Part 1: CRAP critique
+
+Critique the design of the poster for the BYU Student Wellness Center workshop above. Go through the CRAP checklist and analyze how well or poorly the poster follows each of the principles. Discuss how the poster's adherence to (or non-adherence to) these principles influences its effectiveness.
+
+### Part 2: CRAP redesign
+
+Redesign the poster for the BYU Student Wellness Center workshop. Use whatever program you want—even PowerPoint if you're most comfortable with that, though it'll probably be easier to use something like [Canva](https://www.canva.com/) or Adobe Illustrator. If you use Canva, don't use any of the built-in templates—start from scratch with a blank page.
+
+To save you from retyping everything, I've included all the text and Student Wellness hex logo in the zip file below:
+
+- [{{< fa file-archive >}} `03-milestone.zip`](/files/03-milestone.zip)
+
+I didn't include the Instagram logo. If you want to use that, go find one online. You don't have to use it. You don't have to use the big paragraph of text either—you can rewrite it to shrink it down if you want.
+
+### Part 3: CRAP critique
+
+Critique your new design using the CRAP checklist. How did you use contrast, repetition, alignment, and proximity in your improved design?
 
 
 # Project
 
-Instructions here
+Open [this Posit Cloud project](https://posit.cloud/spaces/480579/content/7610728) and follow the instructions in `04_project.qmd`. 
+
+When you're all done, click on the "Render" button at the top of the editor window to render the document to a PDF or Word file. Upload that file to Canvas.
