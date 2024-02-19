@@ -1,0 +1,60 @@
+---
+title: Workshop project
+format:
+  html: 
+    standalone: true
+  pdf: default
+  docx: default
+---
+
+```{r}
+#| label: setup
+#| warning: false
+#| message: false
+
+# Load the core tidyverse libraries
+library(tidyverse)
+
+# Load data about penguins
+penguins <- read_csv("data/penguins.csv")
+```
+
+## Data description 
+
+For this project, you'll once again explore data about 333 penguins living across three islands in Antarctica. See [this website](https://allisonhorst.github.io/palmerpenguins/) for complete details about the data and the variables included.
+
+## Your task: Three plots!
+
+In milestone 1 and 2, you used the `penguins` dataset to re-create some plots, and in milestone 3 you practiced using CRAP principles to redesign an ugly poster.
+
+In this project, you will create three plots, following these guidelines:
+
+1. They cannot be the exact same plots you made before (though you can use your earlier plots as templates or starting places).
+2. You should focus on CRAP principles. Change the colors. Use functions like `theme_bw()`, `theme_minimal()`, etc. to change the overarching theme and use `theme()` to make more specific adjustments. Make these look good.
+3. At least one of the plots should use data that you manipulate with {dplyr} first (e.g. use `filter()` or `group_by() |> summarize()` or create a new column with `mutate()`, etc.).
+
+Good luck!
+
+### Plot 1
+
+```{r}
+#| label: plot-1
+
+
+```
+
+### Plot 2
+
+```{r}
+#| label: plot-2
+
+
+```
+
+### Plot 3
+
+```{r}
+#| label: plot-3
+
+
+```

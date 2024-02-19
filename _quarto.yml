@@ -3,11 +3,12 @@ project:
   output-dir: _site
   render:
     - "*.qmd"
-    - "!slides/"
-    - "!projects/"
+    - "!session_1/slides/"
+    - "!session_1/workshop/"
+    - "!session_1/milestones/"
+    - "!session_1/milestone-answers/"
   resources:
     - "files/"
-    - "projects/"
     - "slides/*.html"
     - "slides/*.pdf"
     - "slides/img/"

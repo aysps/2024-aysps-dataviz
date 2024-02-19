@@ -1,0 +1,90 @@
+---
+title: Manipulate data with {dplyr} and visualize it with {ggplot2}
+format:
+  html: 
+    standalone: false
+  pdf: default
+  docx: default
+---
+
+```{r}
+#| label: setup
+#| warning: false
+#| message: false
+
+# Load the core tidyverse libraries
+library(tidyverse)
+
+# Load data about penguins
+penguins <- read_csv("data/penguins.csv")
+```
+
+## Data description 
+
+For this milestone, you'll again explore data about 333 penguins living across three islands in Antarctica. See [this website](https://allisonhorst.github.io/palmerpenguins/) for complete details about the data and the variables included.
+
+
+## Recreation
+
+### Part 1
+
+We want to see data for only Chinstrap penguins that weigh more than 4,000 grams. Run the code below to see a table. Your task is to recreate this table.
+
+```{r}
+#| label: recreate-this-part-1
+#| message: false
+solution_a <- readr::read_csv("data/milestone02_a.csv")
+solution_a
+```
+
+Use the chunk below to re-create the table above.
+
+```{r}
+penguins |> 
+  filter(species == "Chinstrap", body_mass_g > 4000) |> 
+  write_csv("data/milestone02_a.csv")
+```
+
+We want to see the average, minimum, and maximum weight (`body_mass_g`) of each penguin species. Run the code below to see a table and a plot. Your task is to recreate this table and plot
+
+```{r}
+#| label: recreate-this-part-2
+#| message: false
+solution_b <- readr::read_csv("data/milestone02_b.csv")
+solution_b
+```
+
+Use the chunk below to re-create the table and plot above (*hints*: you'll want to use `group_by()` and `summarize()` when creating the data, and you'll want to use `geom_col()` to show the values in a plot).
+
+```{r}
+penguins |> 
+  group_by(species) |> 
+  summarize(mean_weight = mean(body_mass_g), min_weight = min(body_mass_g), max_weight = max(body_mass_g)) |> 
+  write_csv("data/milestone02_b.csv")
+```
+
+```{r}
+#| label: milestone02_b
+
+penguins |> 
+  group_by(species) |> 
+  summarize(mean_weight = mean(body_mass_g), min_weight = min(body_mass_g), max_weight = max(body_mass_g)) |> 
+  ggplot(aes(x = species, y = mean_weight, fill = species)) + 
+  geom_col()
+```
+
+
+## Extension
+
+Copy the plot above and paste it into the chunk below. Do some extra things to it, like changing the labels, changing the colors, adding a new geom, plotting a different variable from the dataset, change the theme, or whatever. This is your chance to play with the plot and make it as fancy as you want.
+
+```{r}
+#| label: extension
+
+```
+
+
+## Submission
+
+When you're all done, click on the "Render" button at the top of this editor window to render this document to a PDF or Word file. Upload that file to Canvas.
+
